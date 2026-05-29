@@ -1,28 +1,74 @@
-# Cow wisdom web server
+# Wisecow DevOps Deployment - AccuKnox Assessment
 
-## Prerequisites
+## Problem Statement 1
 
-```
-sudo apt install fortune-mod cowsay -y
-```
+Containerized Wisecow application and deployed on Kubernetes.
 
-## How to use?
+### Implemented
 
-1. Run `./wisecow.sh`
-2. Point the browser to server port (default 4499)
+- Dockerized Wisecow application
+- Kubernetes Deployment
+- Kubernetes Service exposure
+- TLS enabled using Kubernetes TLS Secret
+- NGINX Ingress configured
+- GitHub Actions CI/CD pipeline
+- Docker image build and push automation
 
-## What to expect?
-![wisecow](https://github.com/nyrahul/wisecow/assets/9133227/8d6bfde3-4a5a-480e-8d55-3fef60300d98)
+## Tech Stack
 
-# Problem Statement
-Deploy the wisecow application as a k8s app
+- Docker
+- Kubernetes
+- Minikube
+- GitHub Actions
+- NGINX Ingress
+- TLS
 
-## Requirement
-1. Create Dockerfile for the image and corresponding k8s manifest to deploy in k8s env. The wisecow service should be exposed as k8s service.
-2. Github action for creating new image when changes are made to this repo
-3. [Challenge goal]: Enable secure TLS communication for the wisecow app.
+## Kubernetes Files
 
-## Expected Artifacts
-1. Github repo containing the app with corresponding dockerfile, k8s manifest, any other artifacts needed.
-2. Github repo with corresponding github action.
-3. Github repo should be kept private and the access should be enabled for following github IDs: nyrahul
+Located in:
+
+k8s/
+
+- deployment.yaml
+- service.yaml
+- ingress.yaml
+
+
+## Problem Statement 2
+
+Automation scripts:
+
+1. System Health Monitoring Script
+   - CPU monitoring
+   - Memory monitoring
+   - Disk monitoring
+   - Alert logging
+
+2. Application Health Checker
+   - HTTP status check
+   - Detects application UP/DOWN
+
+
+## Problem Statement 3
+
+KubeArmor Zero Trust Policy
+
+Implemented:
+
+- KubeArmor security policy
+- Runtime workload monitoring
+- Policy proof screenshot added
+
+
+## Deployment
+
+Apply manifests:
+
+kubectl apply -f k8s/
+
+
+Check:
+
+kubectl get pods
+kubectl get svc
+kubectl get ingress
