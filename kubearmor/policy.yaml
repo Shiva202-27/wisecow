@@ -1,0 +1,22 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+
+metadata:
+  name: wisecow-zero-trust
+  namespace: default
+
+spec:
+  selector:
+    matchLabels:
+      app: wisecow
+
+  severity: 5
+
+  message: "Shell execution blocked inside Wisecow container"
+
+  process:
+    matchPaths:
+    - path: /bin/bash
+    - path: /bin/sh
+
+  action: Block
